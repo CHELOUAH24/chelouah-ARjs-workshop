@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.7/aframe/build/aframe-ar.js"></script>
+    <title>Earth-sphere</title>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+
+        <a-assets>
+            <img id="earth-sphere" src="earth-sphere.jpg" />
+        </a-assets>
+
+        <a-marker type="pattern" url="pattern-hiro.patt">
+            <a-sphere position="0 0.5 0" 
+                   material="src: #earth-sphere; transparent: true; opacity: 0.95;"
+                   animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
+            </a-sphere>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+    
+</body>
+</html>
